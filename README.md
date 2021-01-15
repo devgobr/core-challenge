@@ -10,5 +10,7 @@ Meiuca Core Component Challenge - React Component and React app
 ### Each project has a README.md explaining how to execute
 
 ### If you want to run on the machine itself, remove yarn.lock and/or yalc.lock from each project
+<br/>
 
-
+## Utilization example
+![core app](./core-challenge-front/public/example-core-app.png)
