@@ -1,0 +1,54 @@
+{
+  "name": "core-challenge",
+  "version": "0.0.1+771c575a",
+  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "files": [
+    "components",
+    "tokens"
+  ],
+  "scripts": {
+    "lint": "eslint src --ext .js,.ts,.tsx",
+    "test": "jest",
+    "generate-tokens-module": "node ./scripts/generateTokensModule.js",
+    "clean": "rimraf components/dist && rimraf tokens/dist",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build:types": "tsc --emitDeclarationOnly && node ./scripts/moveDeclarationFiles.js",
+    "build:js": "rollup -c",
+    "preprepare": "yarn clean",
+    "postprepare": "rimraf dist"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.9.6"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupTests.js"
+    ],
+    "moduleNameMapper": {
+      "^~tokens$": "<rootDir>/src/tokens"
+    }
+  },
+  "peerDependencies": {
+    "react": ">= 16.8",
+    "react-dom": ">= 16.8",
+    "styled-components": ">= 4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "yarn lint --fix",
+      "git add"
+    ]
+  },
+  "yalcSig": "771c575ad35db0bf5477c53386c0fe29"
+}

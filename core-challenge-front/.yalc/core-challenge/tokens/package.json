@@ -1,0 +1,7 @@
+{
+  "name": "core-challenge/tokens",
+  "private": true,
+  "main": "./dist/core-challenge-tokens.cjs.js",
+  "module": "./dist/core-challenge-tokens.esm.js",
+  "types": "./dist/types/index.d.ts"
+}

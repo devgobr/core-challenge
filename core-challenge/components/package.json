@@ -1,0 +1,7 @@
+{
+  "name": "core-challenge/components",
+  "private": true,
+  "main": "./dist/core-challenge-components.cjs.js",
+  "module": "./dist/core-challenge-components.esm.js",
+  "types": "./dist/types/index.d.ts"
+}
